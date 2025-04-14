@@ -1,0 +1,16 @@
+{
+  "name": "alx-backend-javascript",
+  "version": "1.0.0",
+  "description": "ES6 Basics tasks",
+  "scripts": {
+    "test": "jest",
+    "dev": "babel-node"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
+    "babel-jest": "^29.3.1",
+    "eslint": "^8.32.0",
+    "jest": "^29.3.1"
+  }
+}
