@@ -1,8 +1,14 @@
-export default function appendToEachArrayValue(array, appendString) {
-  const newArray = [];
-  for (const value of array) {
-    newArray.push(appendString + value);
-  }
+import { uploadPhoto, createUser } from './utils';
 
-  return newArray;
+export default async function asyncUploadUser() {
+  let res = {};
+
+  try {
+    const photo = await uploadPhoto();
+    const user = await createUser();
+    res = { photo, user };
+  } catch (err) {
+    res = { photo: null, user: null };
+  }
+  return res;
 }
