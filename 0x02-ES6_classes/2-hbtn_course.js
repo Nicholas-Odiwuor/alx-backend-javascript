@@ -1,57 +1,71 @@
-export default class ALXCourse {
-  constructor(name, length, students) {
-    // Verify and set name
-    if (typeof name !== 'string') {
-      throw new TypeError('Name must be a string');
-    }
-    this._name = name;
-
-    // Verify and set length
-    if (typeof length !== 'number') {
-      throw new TypeError('Length must be a number');
-    }
-    this._length = length;
-
-    // Verify and set students
-    if (!Array.isArray(students) || !students.every(s => typeof s === 'string')) {
-      throw new TypeError('Students must be an array of strings');
-    }
-    this._students = students;
+/**
+ * Represents a course at Holberton School.
+ */
+export default class HolbertonCourse {
+  /**
+   * Initializes a new instance of the HolbertonCourse class.
+   *
+   * @param {String} courseName - The name of the course.
+   * @param {Number} courseLength - The duration of the course (in months).
+   * @param {String[]} studentNames - The names of students enrolled in the course.
+   */
+  constructor(courseName, courseLength, studentNames) {
+    this.courseName = courseName;
+    this.courseLength = courseLength;
+    this.studentNames = studentNames;
   }
 
-  // Name getter and setter
-  get name() {
-    return this._name;
+  /**
+   * Retrieves the name of the course.
+   */
+  get courseName() {
+    return this._courseName;
   }
 
-  set name(newName) {
-    if (typeof newName !== 'string') {
-      throw new TypeError('Name must be a string');
+  /**
+   * Sets the name of the course.
+   */
+  set courseName(value) {
+    if (typeof value !== 'string') {
+      throw new TypeError('Course name must be a string');
     }
-    this._name = newName;
+    this._courseName = value;
   }
 
-  // Length getter and setter
-  get length() {
-    return this._length;
+  /**
+   * Retrieves the duration of the course (in months).
+   */
+  get courseLength() {
+    return this._courseLength;
   }
 
-  set length(newLength) {
-    if (typeof newLength !== 'number') {
-      throw new TypeError('Length must be a number');
+  /**
+   * Sets the duration of the course (in months).
+   */
+  set courseLength(value) {
+    if (typeof value !== 'number') {
+      throw new TypeError('Course length must be a number');
     }
-    this._length = newLength;
+    this._courseLength = value;
   }
 
-  // Students getter and setter
-  get students() {
-    return this._students;
+  /**
+   * Retrieves the names of students in the course.
+   */
+  get studentNames() {
+    return this._studentNames;
   }
 
-  set students(newStudents) {
-    if (!Array.isArray(newStudents) || !newStudents.every(s => typeof s === 'string')) {
-      throw new TypeError('Students must be an array of strings');
+  /**
+   * Sets the names of students in the course.
+   */
+  set studentNames(value) {
+    if (!(value instanceof Array)) {
+      throw new TypeError('Student names must be an array of strings');
     }
-    this._students = newStudents;
+    if (!value.every((student) => typeof student === 'string')) {
+      throw new TypeError('Student names must be an array of strings');
+    }
+    this._studentNames = value;
   }
 }
