@@ -1,5 +1,5 @@
 {
-  "name": "ES6 Classes",
+  "name": "alx-backend-javascript",
   "version": "1.0.0",
   "scripts": {
     "test": "jest",
@@ -13,4 +13,3 @@
     "jest": "24.9.0"
   }
 }
-
